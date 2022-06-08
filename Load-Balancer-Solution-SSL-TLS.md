@@ -1,11 +1,11 @@
-### Load Balancer Solution With Nginx and SSL/TLS
+## Load Balancer Solution With Nginx and SSL/TLS (secured web)
 
 This project consists of two parts:
 
-Configure Nginx as a Load Balancer
-Register a new domain name and configure secured connection using SSL/TLS certificates
+* I- Configure Nginx as a Load Balancer
+* II- Register a new domain name & configure secured connection using SSL/TLS certificates
 
-#### Part 1 - Configure Nginx As A Load Balancer
+#### Part I - Configure Nginx As A Load Balancer
 
 1. Create an EC2 VM based on Ubuntu Server 20.04 LTS and name it Nginx LB (do not forget to open TCP port 80 for HTTP connections, also open TCP port 443 - this port is used for secured HTTPS connections)
 
@@ -16,13 +16,13 @@ Register a new domain name and configure secured connection using SSL/TLS certif
 ###### Install Nginx
 
 ```
-sudo apt update
-sudo apt install nginx
+sudo apt update -y
+sudo apt install nginx -y
 ```
 
 Configure /etc/hosts on the Nginx Load Balancer server to add the web servers:
 ```
-sudo nano /etc/hosts
+sudo nano /etc/hosts 
 ```
 Next step is to configure the Load Balancer to point traffic to the DNS names of the two webservers:
 
@@ -54,7 +54,7 @@ sudo systemctl status nginx
 ```
 ![Project 10a](https://user-images.githubusercontent.com/41236641/130810763-f72d0102-2ba4-4da0-9ac4-28d118436f97.JPG)
 
-#### Register a new domain name and configure secured connection using SSL/TLS certificates
+#### Part II: Register a new domain name and configure secured connection using SSL/TLS certificates
 
 To obtain a valid SSL certificate, a domain name needs to be registered. The following steps were taken:
 ![Project 10](https://user-images.githubusercontent.com/41236641/130810465-8d0e7de7-4f85-4532-9710-0ea8edc8a98a.JPG)
